@@ -1,7 +1,7 @@
 extends Node2D
 
 var pause_progress = false
-var power_level
+var direction = 1
 
 signal power_level_selected
 
@@ -10,10 +10,11 @@ func _ready():
 
 func _process(delta):
 	if (!pause_progress):
-		$ProgressBar.value += 20 * delta
-		power_level = $ProgressBar.value
-		
+		if ($ProgressBar.value >= $ProgressBar.max_value || $ProgressBar.value <= $ProgressBar.min_value):
+			direction *= -1
+		$ProgressBar.value += (20 * direction) * delta
 
 func _on_golf_ball_hit():
 	pause_progress = true
+	var power_level = $ProgressBar.value
 	emit_signal("power_level_selected", power_level)
