@@ -19,6 +19,12 @@ config/name="Elixir"
 run/main_scene="res://PlayScene.tscn"
 config/icon="res://icon.png"
 
+[layer_names]
+
+2d_physics/layer_1="golfBall"
+2d_physics/layer_2="walls"
+2d_physics/layer_3="hole"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

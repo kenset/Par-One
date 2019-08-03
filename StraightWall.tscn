@@ -11,6 +11,7 @@ margin_bottom = 40.0
 color = Color( 0.254902, 0.192157, 0.188235, 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 20, 20 )
