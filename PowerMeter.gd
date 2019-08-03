@@ -1,5 +1,7 @@
 extends Node2D
 
+export var SPEED = 3
+
 var pause_progress = false
 var direction = 1
 
@@ -12,7 +14,7 @@ func _process(delta):
 	if (!pause_progress):
 		if ($ProgressBar.value >= $ProgressBar.max_value || $ProgressBar.value <= $ProgressBar.min_value):
 			direction *= -1
-		$ProgressBar.value += (20 * direction) * delta
+		$ProgressBar.value += (SPEED * max($ProgressBar.value, 10) * direction) * delta
 
 func _on_golf_ball_hit():
 	pause_progress = true
