@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://StraightWall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://course/BottomLeftCourse.tscn" type="PackedScene" id=2]
+[ext_resource path="res://course/BottomRightCourse.tscn" type="PackedScene" id=3]
+[ext_resource path="res://course/TopLeftCourse.tscn" type="PackedScene" id=4]
+[ext_resource path="res://course/TopRightCourse.tscn" type="PackedScene" id=5]
+[ext_resource path="res://course/SideLeftCourse.tscn" type="PackedScene" id=6]
+[ext_resource path="res://course/SideRightCourse.tscn" type="PackedScene" id=7]
+[ext_resource path="res://course/BottomCourse.tscn" type="PackedScene" id=8]
+[ext_resource path="res://course/TopCourse.tscn" type="PackedScene" id=9]
+
+[node name="Course" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 270.0
+margin_bottom = 420.0
+color = Color( 0.0470588, 0.333333, 0.117647, 1 )
+
+[node name="LeftWall" parent="ColorRect" instance=ExtResource( 1 )]
+position = Vector2( -20, 0 )
+scale = Vector2( 0.5, 10.5 )
+
+[node name="Right Wall" parent="ColorRect" instance=ExtResource( 1 )]
+position = Vector2( 250, 0 )
+scale = Vector2( 0.5, 10 )
+
+[node name="Top Wall" parent="ColorRect" instance=ExtResource( 1 )]
+position = Vector2( -20, -20 )
+scale = Vector2( 7.25, 0.5 )
+
+[node name="Bottom Wall" parent="ColorRect" instance=ExtResource( 1 )]
+position = Vector2( 0, 400 )
+scale = Vector2( 6.75, 0.5 )
+
+[node name="BottomLeftCourse" parent="." instance=ExtResource( 2 )]
+position = Vector2( 112, 256 )
+
+[node name="BottomRightCourse" parent="." instance=ExtResource( 3 )]
+position = Vector2( 176, 256 )
+
+[node name="TopLeftCourse" parent="." instance=ExtResource( 4 )]
+position = Vector2( 64, 64 )
+
+[node name="TopRightCourse" parent="." instance=ExtResource( 5 )]
+position = Vector2( 240, 64 )
+
+[node name="SideLeftCourse" parent="." instance=ExtResource( 6 )]
+position = Vector2( 64, 128 )
+
+[node name="SideRightCourse" parent="." instance=ExtResource( 7 )]
+position = Vector2( 240, 128 )
+
+[node name="BottomCourse" parent="." instance=ExtResource( 8 )]
+position = Vector2( 64, 192 )
+
+[node name="TopCourse" parent="." instance=ExtResource( 9 )]
+position = Vector2( 128, 48 )
