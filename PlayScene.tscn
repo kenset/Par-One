@@ -12,5 +12,4 @@ position = Vector2( 250, 50 )
 
 [node name="GolfBall" parent="." instance=ExtResource( 3 )]
 position = Vector2( 380, 140 )
-linear_damp = 0.25
-angular_damp = 3.0
+SPEED = 250
