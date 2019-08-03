@@ -16,7 +16,10 @@ func _ready():
 
 func _on_timeout():
 	calculate_score()
-	get_tree().reload_current_scene()
+#	get_tree().reload_current_scene()
 
 func calculate_score():
-	emit_signal("score_points", 100)
+	var golfBallPosition = $GolfBall/CollisionShape2D.get_global_transform().get_origin()
+	var holePosition = $Hole.get_global_transform().get_origin()
+	var distance = golfBallPosition.distance_to(holePosition)
+	emit_signal("score_points", floor(distance))

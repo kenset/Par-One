@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 export var POWER_MULTIPLIER = 5
+export var WALL_POINTS = 10
 
 signal golf_ball_hit
 signal score_points
@@ -24,4 +25,4 @@ func _on_power_level_selected(power_level):
 	self.apply_central_impulse((get_global_mouse_position() - self.position).normalized() * (power_level * POWER_MULTIPLIER))
 
 func _on_body_entered(body):
-	emit_signal("score_points", 10)
+	emit_signal("score_points", WALL_POINTS)
