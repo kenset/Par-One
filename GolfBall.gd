@@ -15,7 +15,7 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
-		if event.scancode == KEY_A:
+		if event.scancode == KEY_SPACE:
 			_hit_golf_ball()
 
 func _hit_golf_ball():
@@ -26,3 +26,6 @@ func _on_power_level_selected(power_level):
 
 func _on_body_entered(body):
 	emit_signal("score_points", WALL_POINTS)
+
+func _on_hole_in_one():
+	queue_free()

@@ -1,6 +1,7 @@
 extends Node2D
 
 signal score_points
+signal hole_in_one
 
 func _ready():
 	$Area2D.connect("body_entered", self, "_on_body_entered")
@@ -13,4 +14,4 @@ func _on_body_entered(body):
 	emit_signal("score_points", 1000)
 
 func hole_in_one():
-	print("hole in one!")
+	emit_signal("hole_in_one")

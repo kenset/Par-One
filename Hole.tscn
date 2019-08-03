@@ -3,6 +3,7 @@
 [ext_resource path="res://Hole.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.6446, 5.73317 )
 
 [node name="Hole" type="Node2D"]
 script = ExtResource( 1 )
