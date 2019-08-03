@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/course/GolfCourses_11.png" type="Texture" id=1]
 
-[node name="BottomCourse" type="Node2D"]
+[node name="CourseGrass" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
