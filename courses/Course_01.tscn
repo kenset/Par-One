@@ -1,16 +1,16 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://course/TopCourse.tscn" type="PackedScene" id=1]
-[ext_resource path="res://course/TopLeftCourse.tscn" type="PackedScene" id=2]
-[ext_resource path="res://course/TopRightCourse.tscn" type="PackedScene" id=3]
-[ext_resource path="res://course/SideLeftCourse.tscn" type="PackedScene" id=4]
-[ext_resource path="res://course/SideRightCourse.tscn" type="PackedScene" id=5]
-[ext_resource path="res://course/BottomLeftCourse.tscn" type="PackedScene" id=6]
-[ext_resource path="res://course/BottomRightCourse.tscn" type="PackedScene" id=7]
-[ext_resource path="res://course/BottomCourse.tscn" type="PackedScene" id=8]
-[ext_resource path="res://course/CourseGrass.tscn" type="PackedScene" id=9]
+[ext_resource path="res://courses/course_components/TopCourse.tscn" type="PackedScene" id=1]
+[ext_resource path="res://courses/course_components/TopLeftCourse.tscn" type="PackedScene" id=2]
+[ext_resource path="res://courses/course_components/TopRightCourse.tscn" type="PackedScene" id=3]
+[ext_resource path="res://courses/course_components/SideLeftCourse.tscn" type="PackedScene" id=4]
+[ext_resource path="res://courses/course_components/SideRightCourse.tscn" type="PackedScene" id=5]
+[ext_resource path="res://courses/course_components/BottomLeftCourse.tscn" type="PackedScene" id=6]
+[ext_resource path="res://courses/course_components/BottomRightCourse.tscn" type="PackedScene" id=7]
+[ext_resource path="res://courses/course_components/BottomCourse.tscn" type="PackedScene" id=8]
+[ext_resource path="res://courses/course_components/CourseGrass.tscn" type="PackedScene" id=9]
 
-[node name="Course" type="Node2D"]
+[node name="Course_01" type="Node2D"]
 
 [node name="TopCourse" parent="." instance=ExtResource( 1 )]
 position = Vector2( 96, 32 )
