@@ -3,6 +3,8 @@ extends RigidBody2D
 export var POWER_MULTIPLIER = 5
 export var WALL_POINTS = 10
 
+var golf_ball_has_been_hit = false
+
 signal golf_ball_hit
 signal score_points
 
@@ -14,14 +16,16 @@ func _process(delta):
 	$Arrow.look_at(get_global_mouse_position())
 
 func _input(event):
-	if event is InputEventKey and event.pressed:
+	if event is InputEventKey and event.pressed and !golf_ball_has_been_hit:
 		if event.scancode == KEY_SPACE:
 			_hit_golf_ball()
 
 func _hit_golf_ball():
+	golf_ball_has_been_hit = true
 	emit_signal("golf_ball_hit")
 
 func _on_power_level_selected(power_level):
+	$Arrow.hide()
 	self.apply_central_impulse((get_global_mouse_position() - self.position).normalized() * (power_level * POWER_MULTIPLIER))
 
 func _on_body_entered(body):
