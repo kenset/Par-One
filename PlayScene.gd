@@ -10,6 +10,7 @@ func _ready():
 	
 	self.connect("score_points", $HighScore, "_on_score_points")
 	$GolfBall.connect("score_points", $HighScore, "_on_score_points")
+	$Hole.connect("score_points", $HighScore, "_on_score_points")
 
 #func _process(delta):
 #	pass
