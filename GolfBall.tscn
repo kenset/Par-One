@@ -6,7 +6,7 @@
 [sub_resource type="PhysicsMaterial" id=2]
 bounce = 0.5
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=3]
 radius = 7.07107
 
 [node name="GolfBall" type="RigidBody2D"]
@@ -21,7 +21,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 5, 5 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 10.0

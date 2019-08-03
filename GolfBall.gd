@@ -1,17 +1,12 @@
 extends RigidBody2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export var POWER_MULTIPLIER = 5
 
-export var SPEED = 100
+signal golf_ball_hit
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	self.set_process_input(true)
-	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Arrow.look_at(get_global_mouse_position())
 
@@ -21,4 +16,7 @@ func _input(event):
 			_hit_golf_ball()
 
 func _hit_golf_ball():
-	self.apply_central_impulse((get_global_mouse_position() - self.position).normalized() * SPEED)
+	emit_signal("golf_ball_hit")
+	
+func _on_power_level_selected(power_level):
+	self.apply_central_impulse((get_global_mouse_position() - self.position).normalized() * (power_level * POWER_MULTIPLIER))

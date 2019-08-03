@@ -1,12 +1,9 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$GolfBall.connect("golf_ball_hit", $PowerMeter, "_on_golf_ball_hit")
+	$PowerMeter.connect("power_level_selected", $GolfBall, "_on_power_level_selected")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
