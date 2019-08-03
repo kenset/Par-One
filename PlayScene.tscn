@@ -20,4 +20,3 @@ position = Vector2( 300, 510 )
 
 [node name="Timer" parent="." instance=ExtResource( 5 )]
 position = Vector2( 205, 100 )
-STARTING_TIME = 9
