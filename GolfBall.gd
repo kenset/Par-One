@@ -53,6 +53,7 @@ func _on_hole_in_one():
 	queue_free()
 
 func _on_entered_sand_trap():
+	emit_signal("screen_shake", 1.0, 0.1)
 	in_sand_trap = true
 
 func _on_exited_sand_trap():
