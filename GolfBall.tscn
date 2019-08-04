@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://GolfBall.gd" type="Script" id=1]
 [ext_resource path="res://assets/golf_ball/golf_ball_anim_01.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/golf_ball/golf_ball_anim_04.png" type="Texture" id=5]
 [ext_resource path="res://assets/arrow.png" type="Texture" id=6]
 [ext_resource path="res://assets/sound_effects/wall_hit.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sound_effects/golf_ball_hit.wav" type="AudioStream" id=8]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 1.0
@@ -56,5 +57,8 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
 offset = Vector2( 30.6231, 3.45085 )
 
-[node name="Audio" type="AudioStreamPlayer" parent="."]
+[node name="WallHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+
+[node name="GolfBallHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )

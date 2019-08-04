@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/golf_ball_hit.wav-cb61f9553a147b2165ae135e965b4322.sample"
+
+[deps]
+
+source_file="res://assets/sound_effects/golf_ball_hit.wav"
+dest_files=[ "res://.import/golf_ball_hit.wav-cb61f9553a147b2165ae135e965b4322.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

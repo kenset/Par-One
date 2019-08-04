@@ -36,6 +36,7 @@ func _input(event):
 			hit_golf_ball()
 
 func hit_golf_ball():
+	$GolfBallHit.play()
 	$AnimatedSprite.playing = true
 	golf_ball_has_been_hit = true
 	emit_signal("golf_ball_hit")
@@ -45,7 +46,7 @@ func _on_power_level_selected(power_level):
 	self.apply_central_impulse((get_global_mouse_position() - self.global_position).normalized() * (power_level * POWER_MULTIPLIER))
 
 func _on_body_entered(body):
-	$Audio.play(0.0)
+	$WallHit.play()
 	emit_signal("screen_shake", 1.0, 0.1)
 	emit_signal("score_points", WALL_POINTS)
 
