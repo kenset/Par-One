@@ -5,7 +5,6 @@ signal reset_power_meter
 
 export(Array, PackedScene) var courses
 export(Array, PackedScene) var hardCourses
-export var SHAKE_AMOUNT = 1.0
 
 var currentCourseNumber = 0
 var currentCourse: Node2D
@@ -15,6 +14,9 @@ var in_hard_course = false
 
 func _ready():
 	self.connect("reset_power_meter", $PowerMeter, "_on_reset_power_meter")
+	$Timer/Timer.connect("timeout", self, "_on_timeout")
+	$CelebrationTimer.connect("timeout", self, "_on_celebration_timeout")
+	self.connect("score_points", $HighScore, "_on_score_points")
 	randomize()
 	loadCourseWithCourseNumber(currentCourseNumber, courses)
 
@@ -63,15 +65,12 @@ func loadCourse(course):
 	golfBall.connect("screen_shake", $ScreenShake, "_on_screen_shake")
 	$PowerMeter.connect("power_level_selected", golfBall, "_on_power_level_selected")
 	
-	$Timer/Timer.connect("timeout", self, "_on_timeout")
-	$CelebrationTimer.connect("timeout", self, "_on_celebration_timeout")
 	hole.connect("hole_in_one", golfBall, "_on_hole_in_one")
 	hole.connect("hole_in_one", self, "_on_hole_in_one")
 	if (specialHole != null):
 		specialHole.connect("hole_in_one", golfBall, "_on_hole_in_one")
 		specialHole.connect("hole_in_one", self, "_on_hole_in_one")
 	
-	self.connect("score_points", $HighScore, "_on_score_points")
 	golfBall.connect("score_points", $HighScore, "_on_score_points")
 	hole.connect("score_points", $HighScore, "_on_score_points")
 	if (specialHole != null):
@@ -87,11 +86,9 @@ func _on_celebration_timeout():
 
 func _on_golf_ball_stopped():
 	go_to_hard_course = false
-	calculate_score()
-	loadNextCourse()
+	call_deferred("loadNextCourse")
 
 func _on_timeout():
-	calculate_score()
 	loadNextCourse()
 
 func _on_hole_in_one(is_special):
@@ -105,11 +102,3 @@ func _on_hole_in_one(is_special):
 		go_to_hard_course = false
 	confetti.set_global_position(confettiPosition)
 	add_child(confetti)
-
-func calculate_score():
-	if ($GolfBall == null):
-		return
-	var golfBallPosition = $GolfBall/CollisionShape2D.get_global_transform().get_origin()
-	var holePosition = $Hole.get_global_transform().get_origin()
-	var distance = golfBallPosition.distance_to(holePosition)
-	emit_signal("score_points", floor(distance))
