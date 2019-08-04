@@ -19,6 +19,8 @@ func _ready():
 func _process(delta):
 	if ($Arrow.visible):
 		$Arrow.look_at(get_global_mouse_position())
+	if (Input.is_action_just_pressed("hit_golf_ball") && !golf_ball_has_been_hit):
+		hit_golf_ball()
 
 func _integrate_forces(state):
 	if (in_sand_trap == true):
@@ -29,11 +31,6 @@ func _integrate_forces(state):
 		linear_velocity = Vector2(0, 0)
 		$AnimatedSprite.playing = false
 		emit_signal("golf_ball_stopped")
-
-func _input(event):
-	if event is InputEventKey and event.pressed and !golf_ball_has_been_hit:
-		if event.scancode == KEY_SPACE:
-			hit_golf_ball()
 
 func hit_golf_ball():
 	$GolfBallHit.play()
