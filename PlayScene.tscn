@@ -15,6 +15,7 @@ courses = [ ExtResource( 2 ), ExtResource( 3 ) ]
 position = Vector2( 420, 550 )
 
 [node name="Timer" parent="." instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 600, 110 )
 
 [node name="HighScore" parent="." instance=ExtResource( 6 )]

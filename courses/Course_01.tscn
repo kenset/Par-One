@@ -16,6 +16,7 @@
 
 [node name="CourseComponents" type="Node2D" parent="."]
 editor/display_folded = true
+position = Vector2( 0, -32 )
 
 [node name="TopCourse" parent="CourseComponents" instance=ExtResource( 1 )]
 position = Vector2( 0, -128 )
@@ -35,6 +36,9 @@ position = Vector2( -64, 0 )
 [node name="SideLeftCourse3" parent="CourseComponents" instance=ExtResource( 4 )]
 position = Vector2( -64, 64 )
 
+[node name="SideLeftCourse4" parent="CourseComponents" instance=ExtResource( 4 )]
+position = Vector2( -64, 128 )
+
 [node name="SideRightCourse" parent="CourseComponents" instance=ExtResource( 5 )]
 position = Vector2( 64, -64 )
 
@@ -44,14 +48,17 @@ position = Vector2( 64, 0 )
 [node name="SideRightCourse3" parent="CourseComponents" instance=ExtResource( 5 )]
 position = Vector2( 64, 64 )
 
-[node name="BottomLeftCourse" parent="CourseComponents" instance=ExtResource( 6 )]
-position = Vector2( -64, 128 )
-
-[node name="BottomRightCourse" parent="CourseComponents" instance=ExtResource( 7 )]
+[node name="SideRightCourse4" parent="CourseComponents" instance=ExtResource( 5 )]
 position = Vector2( 64, 128 )
 
+[node name="BottomLeftCourse" parent="CourseComponents" instance=ExtResource( 6 )]
+position = Vector2( -64, 192 )
+
+[node name="BottomRightCourse" parent="CourseComponents" instance=ExtResource( 7 )]
+position = Vector2( 64, 192 )
+
 [node name="BottomCourse" parent="CourseComponents" instance=ExtResource( 8 )]
-position = Vector2( 0, 128 )
+position = Vector2( 0, 192 )
 
 [node name="CourseGrass" parent="CourseComponents" instance=ExtResource( 9 )]
 position = Vector2( 0, -64 )
@@ -60,6 +67,9 @@ position = Vector2( 0, -64 )
 
 [node name="CourseGrass5" parent="CourseComponents" instance=ExtResource( 9 )]
 position = Vector2( 0, 64 )
+
+[node name="CourseGrass6" parent="CourseComponents" instance=ExtResource( 9 )]
+position = Vector2( 0, 128 )
 
 [node name="GolfBall" parent="." instance=ExtResource( 10 )]
 position = Vector2( -48, -112 )

@@ -15,6 +15,7 @@ func _ready():
 func loadNextCourse():
 	currentCourseNumber = currentCourseNumber + 1
 	if (currentCourseNumber < courses.size()):
+		emit_signal("reset_power_meter")
 		currentCourse.queue_free()
 		loadCourse(currentCourseNumber)
 
@@ -27,10 +28,12 @@ func loadCourse(courseNumber):
 	var hole: Node2D = currentCourse.get_node("Hole")
 	
 	golfBall.connect("golf_ball_hit", $PowerMeter, "_on_golf_ball_hit")
+	golfBall.connect("golf_ball_stopped", self, "_on_golf_ball_stopped")
 	$PowerMeter.connect("power_level_selected", golfBall, "_on_power_level_selected")
 	
 	$Timer/Timer.connect("timeout", self, "_on_timeout")
 	hole.connect("hole_in_one", golfBall, "_on_hole_in_one")
+	hole.connect("hole_in_one", self, "_on_hole_in_one")
 	
 	self.connect("score_points", $HighScore, "_on_score_points")
 	golfBall.connect("score_points", $HighScore, "_on_score_points")
@@ -39,9 +42,15 @@ func loadCourse(courseNumber):
 #func _process(delta):
 #	pass
 
+func _on_golf_ball_stopped():
+	calculate_score()
+	loadNextCourse()
+
 func _on_timeout():
 	calculate_score()
-	emit_signal("reset_power_meter")
+	loadNextCourse()
+
+func _on_hole_in_one():
 	loadNextCourse()
 
 func calculate_score():

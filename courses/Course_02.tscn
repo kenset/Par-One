@@ -16,15 +16,21 @@
 
 [node name="CourseComponents" type="Node2D" parent="."]
 editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TopLeftCourse" parent="CourseComponents" instance=ExtResource( 1 )]
-position = Vector2( -96, -160 )
+position = Vector2( -96, -224 )
 
 [node name="TopRightCourse" parent="CourseComponents" instance=ExtResource( 2 )]
-position = Vector2( -32, -160 )
+position = Vector2( -32, -224 )
 
 [node name="SideLeftCourse" parent="CourseComponents" instance=ExtResource( 3 )]
 position = Vector2( -96, -96 )
+
+[node name="SideLeftCourse4" parent="CourseComponents" instance=ExtResource( 3 )]
+position = Vector2( -96, -160 )
 
 [node name="SideLeftCourse2" parent="CourseComponents" instance=ExtResource( 3 )]
 position = Vector2( -96, -32 )
@@ -34,6 +40,9 @@ position = Vector2( -96, 32 )
 
 [node name="SideRightCourse" parent="CourseComponents" instance=ExtResource( 4 )]
 position = Vector2( -32, -96 )
+
+[node name="SideRightCourse3" parent="CourseComponents" instance=ExtResource( 4 )]
+position = Vector2( -32, -160 )
 
 [node name="SideRightCourse2" parent="CourseComponents" instance=ExtResource( 4 )]
 position = Vector2( -32, -32 )
@@ -50,23 +59,29 @@ position = Vector2( -32, 32 )
 [node name="TopCourse2" parent="CourseComponents" instance=ExtResource( 8 )]
 position = Vector2( 96, 32 )
 
+[node name="TopCourse3" parent="CourseComponents" instance=ExtResource( 8 )]
+position = Vector2( 160, 32 )
+
 [node name="BottomCourse2" parent="CourseComponents" instance=ExtResource( 6 )]
 position = Vector2( 96, 96 )
+
+[node name="BottomCourse4" parent="CourseComponents" instance=ExtResource( 6 )]
+position = Vector2( 160, 96 )
 
 [node name="BottomCourse3" parent="CourseComponents" instance=ExtResource( 6 )]
 position = Vector2( 32, 96 )
 
 [node name="TopRightCourse2" parent="CourseComponents" instance=ExtResource( 2 )]
-position = Vector2( 160, 32 )
+position = Vector2( 224, 32 )
 
 [node name="BottomRightCourse" parent="CourseComponents" instance=ExtResource( 9 )]
-position = Vector2( 160, 96 )
+position = Vector2( 224, 96 )
 
 [node name="TopCourse" parent="CourseComponents" instance=ExtResource( 8 )]
 position = Vector2( 32, 32 )
 
 [node name="GolfBall" parent="." instance=ExtResource( 10 )]
-position = Vector2( -80, -144 )
+position = Vector2( -75, -192 )
 
 [node name="Hole" parent="." instance=ExtResource( 11 )]
-position = Vector2( 128, 64 )
+position = Vector2( 192, 64 )
