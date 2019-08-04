@@ -4,9 +4,9 @@
 [ext_resource path="res://courses/course_components/TopRightCourse.tscn" type="PackedScene" id=2]
 [ext_resource path="res://courses/course_components/BottomLeftCourse.tscn" type="PackedScene" id=3]
 [ext_resource path="res://courses/course_components/BottomRightCourse.tscn" type="PackedScene" id=4]
-[ext_resource path="res://GolfBall.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Hole.tscn" type="PackedScene" id=6]
-[ext_resource path="res://courses/course_components/CourseGrass.tscn" type="PackedScene" id=7]
+[ext_resource path="res://courses/course_components/CourseGrass.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GolfBall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Hole.tscn" type="PackedScene" id=7]
 
 [node name="Course_08" type="Node2D"]
 
@@ -43,16 +43,17 @@ position = Vector2( -64, -64 )
 [node name="BottomRightCourse" parent="CourseComponents" instance=ExtResource( 4 )]
 position = Vector2( 192, 128 )
 
-[node name="GolfBall" parent="." instance=ExtResource( 5 )]
+[node name="CourseGrass2" parent="CourseComponents" instance=ExtResource( 5 )]
+position = Vector2( 64, 0 )
+
+[node name="CourseGrass4" parent="CourseComponents" instance=ExtResource( 5 )]
+position = Vector2( 128, 64 )
+
+[node name="CourseGrass3" parent="CourseComponents" instance=ExtResource( 5 )]
+position = Vector2( 0, -64 )
+
+[node name="GolfBall" parent="." instance=ExtResource( 6 )]
 position = Vector2( 112, 112 )
 
-[node name="Hole" parent="." instance=ExtResource( 6 )]
+[node name="Hole" parent="." instance=ExtResource( 7 )]
 position = Vector2( -112, -112 )
-
-[node name="CourseGrass" parent="." instance=ExtResource( 7 )]
-position = Vector2( 64, 64 )
-
-[node name="CourseGrass2" parent="." instance=ExtResource( 7 )]
-
-[node name="CourseGrass3" parent="." instance=ExtResource( 7 )]
-position = Vector2( -64, -64 )
