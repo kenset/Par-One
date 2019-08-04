@@ -14,4 +14,5 @@ func _on_body_entered(body):
 	emit_signal("score_points", 1000)
 
 func hole_in_one():
+	$Audio.play(0.0)
 	emit_signal("hole_in_one")

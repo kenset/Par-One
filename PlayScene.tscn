@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://PlayScene.gd" type="Script" id=1]
 [ext_resource path="res://courses/Course_01.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://PowerMeter.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Timer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://HighScore.tscn" type="PackedScene" id=13]
+[ext_resource path="res://ScreenShake.tscn" type="PackedScene" id=14]
 
 [node name="PlayScene" type="Node2D" groups=[
 "golfBall",
@@ -32,3 +33,6 @@ position = Vector2( 150, 100 )
 
 [node name="ScreenCenter" type="Node2D" parent="."]
 position = Vector2( 512, 300 )
+
+[node name="ScreenShake" parent="." instance=ExtResource( 14 )]
+position = Vector2( 510, 300 )

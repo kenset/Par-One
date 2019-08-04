@@ -4,12 +4,14 @@ signal score_points
 signal reset_power_meter
 
 export(Array, PackedScene) var courses
+export var SHAKE_AMOUNT = 1.0
 
 var currentCourseNumber = 0
 var currentCourse: Node2D
 
 func _ready():
 	self.connect("reset_power_meter", $PowerMeter, "_on_reset_power_meter")
+	randomize()
 	loadCourse(currentCourseNumber)
 
 func _input(event):
@@ -39,6 +41,7 @@ func loadCourse(courseNumber):
 	
 	golfBall.connect("golf_ball_hit", $PowerMeter, "_on_golf_ball_hit")
 	golfBall.connect("golf_ball_stopped", self, "_on_golf_ball_stopped")
+	golfBall.connect("screen_shake", $ScreenShake, "_on_screen_shake")
 	$PowerMeter.connect("power_level_selected", golfBall, "_on_power_level_selected")
 	
 	$Timer/Timer.connect("timeout", self, "_on_timeout")
@@ -50,9 +53,6 @@ func loadCourse(courseNumber):
 	hole.connect("score_points", $HighScore, "_on_score_points")
 	
 	currentCourse.find_node("GolfBall").add_to_group("golfBall")
-
-#func _process(delta):
-#	pass
 
 func _on_golf_ball_stopped():
 	calculate_score()
