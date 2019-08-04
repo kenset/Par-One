@@ -4,6 +4,7 @@ signal score_points
 signal reset_power_meter
 
 export(Array, PackedScene) var courses
+export(Array, PackedScene) var hardCourses
 export var SHAKE_AMOUNT = 1.0
 
 var currentCourseNumber = 0
@@ -13,27 +14,35 @@ var confetti_scene = preload("res://Confetti.tscn")
 func _ready():
 	self.connect("reset_power_meter", $PowerMeter, "_on_reset_power_meter")
 	randomize()
-	loadCourse(currentCourseNumber)
+	loadCourseWithCourseNumber(currentCourseNumber, courses)
 
 func _input(event):
 	if event is InputEventKey and event.pressed and event.scancode != KEY_SPACE:
 		if (event.scancode - 49 < courses.size()):
-			currentCourse.queue_free()
-			loadCourse(event.scancode - 49)
+			loadCourseWithCourseNumber(event.scancode - 49, courses)
+
+func _process(delta):
+	if (Input.is_action_pressed("hard_modifier")):
+		if (Input.is_key_pressed(KEY_1)):
+			loadCourseWithCourseNumber(0, hardCourses)
 
 func loadNextCourse():
 	currentCourseNumber = currentCourseNumber + 1
 	if (currentCourseNumber < courses.size()):
-		loadCourse(currentCourseNumber)
+		loadCourseWithCourseNumber(currentCourseNumber, courses)
 
-func loadCourse(courseNumber):
-	if (courseNumber < 0 || courseNumber >= courses.size()):
+func loadCourseWithCourseNumber(courseNumber, courses_array):
+	if (courseNumber < 0 || courseNumber >= courses_array.size()):
 		return
 	if (currentCourse != null):
 		currentCourse.queue_free()
 	emit_signal("reset_power_meter")
 	
-	currentCourse = courses[courseNumber].instance()
+	var courseToLoad = courses_array[courseNumber].instance()
+	loadCourse(courseToLoad)
+
+func loadCourse(course):
+	currentCourse = course
 	currentCourse.set_global_transform($ScreenCenter.get_global_transform())
 	add_child(currentCourse)
 	
