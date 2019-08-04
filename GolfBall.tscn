@@ -45,11 +45,6 @@ scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 3 )
 frame = 3
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-margin_right = 10.0
-margin_bottom = 10.0
-
 [node name="Arrow" type="Sprite" parent="."]
 position = Vector2( 5.03286, 5.00052 )
 rotation = 1.5708
