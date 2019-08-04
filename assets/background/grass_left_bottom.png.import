@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GolfCourses_04.png-58d2478a369ae76a1c82d194e6edf4ae.stex"
+path="res://.import/grass_left_bottom.png-9afb27e9409e45ebf346315e62726497.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/grass/GolfCourses_04.png"
-dest_files=[ "res://.import/GolfCourses_04.png-58d2478a369ae76a1c82d194e6edf4ae.stex" ]
+source_file="res://assets/background/grass_left_bottom.png"
+dest_files=[ "res://.import/grass_left_bottom.png-9afb27e9409e45ebf346315e62726497.stex" ]
 
 [params]
 
