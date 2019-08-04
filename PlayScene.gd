@@ -12,14 +12,24 @@ func _ready():
 	self.connect("reset_power_meter", $PowerMeter, "_on_reset_power_meter")
 	loadCourse(currentCourseNumber)
 
+func _input(event):
+	if event is InputEventKey and event.pressed and event.scancode != KEY_SPACE:
+		if (event.scancode - 49 < courses.size()):
+			currentCourse.queue_free()
+			loadCourse(event.scancode - 49)
+
 func loadNextCourse():
 	currentCourseNumber = currentCourseNumber + 1
 	if (currentCourseNumber < courses.size()):
-		emit_signal("reset_power_meter")
-		currentCourse.queue_free()
 		loadCourse(currentCourseNumber)
 
 func loadCourse(courseNumber):
+	if (courseNumber < 0 || courseNumber >= courses.size()):
+		return
+	if (currentCourse != null):
+		currentCourse.queue_free()
+	emit_signal("reset_power_meter")
+	
 	currentCourse = courses[courseNumber].instance()
 	currentCourse.set_global_transform($ScreenCenter.get_global_transform())
 	add_child(currentCourse)
