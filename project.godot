@@ -19,6 +19,11 @@ config/name="Elixir"
 run/main_scene="res://PlayScene.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/height=640
+window/size/resizable=false
+
 [layer_names]
 
 2d_physics/layer_1="golfBall"

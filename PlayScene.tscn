@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://PlayScene.gd" type="Script" id=1]
 [ext_resource path="res://courses/Course_01.tscn" type="PackedScene" id=2]
@@ -19,1316 +19,730 @@
 [ext_resource path="res://assets/background/grass_right.png" type="Texture" id=17]
 [ext_resource path="res://assets/background/grass_top.png" type="Texture" id=18]
 [ext_resource path="res://assets/background/grass_no_border.png" type="Texture" id=19]
-[ext_resource path="res://Timer.tscn" type="PackedScene" id=20]
-[ext_resource path="res://HighScore.tscn" type="PackedScene" id=21]
-[ext_resource path="res://ScreenShake.tscn" type="PackedScene" id=22]
-[ext_resource path="res://PowerMeter.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/background/sky.png" type="Texture" id=20]
+[ext_resource path="res://Timer.tscn" type="PackedScene" id=21]
+[ext_resource path="res://HighScore.tscn" type="PackedScene" id=22]
+[ext_resource path="res://ScreenShake.tscn" type="PackedScene" id=23]
+[ext_resource path="res://PowerMeter.tscn" type="PackedScene" id=24]
 
 [node name="PlayScene" type="Node2D" groups=[
 "golfBall",
 ]]
+position = Vector2( 0, 16 )
 script = ExtResource( 1 )
 courses = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ]
 
 [node name="Background" type="Node2D" parent="."]
-editor/display_folded = true
-visible = false
 
 [node name="grass_right_bottom" type="Sprite" parent="Background"]
-position = Vector2( 992, 576 )
+position = Vector2( 992, 592.008 )
 texture = ExtResource( 11 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top_right" type="Sprite" parent="Background"]
-position = Vector2( 992, 32 )
+position = Vector2( 992, 80 )
 texture = ExtResource( 12 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_left_bottom" type="Sprite" parent="Background"]
-position = Vector2( 32, 576 )
+position = Vector2( 32, 592.008 )
 texture = ExtResource( 13 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top_left" type="Sprite" parent="Background"]
-position = Vector2( 32, 32 )
+position = Vector2( 32, 80 )
 texture = ExtResource( 14 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom" type="Sprite" parent="Background"]
-position = Vector2( 96, 576 )
+position = Vector2( 96, 592.008 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom15" type="Sprite" parent="Background"]
-position = Vector2( 608, 576 )
+position = Vector2( 608, 592 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom7" type="Sprite" parent="Background"]
-position = Vector2( 352, 576 )
+position = Vector2( 352, 592 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom10" type="Sprite" parent="Background"]
-position = Vector2( 800, 576 )
+position = Vector2( 800, 592 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom3" type="Sprite" parent="Background"]
-position = Vector2( 224, 576 )
+position = Vector2( 224, 592 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom5" type="Sprite" parent="Background"]
-position = Vector2( 480, 576 )
+position = Vector2( 480, 592 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom2" type="Sprite" parent="Background"]
-position = Vector2( 160, 576 )
+position = Vector2( 160, 592 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom16" type="Sprite" parent="Background"]
-position = Vector2( 672, 576 )
+position = Vector2( 672, 592 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom8" type="Sprite" parent="Background"]
-position = Vector2( 416, 576 )
+position = Vector2( 416, 592 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom11" type="Sprite" parent="Background"]
-position = Vector2( 864, 576 )
+position = Vector2( 864, 592 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom12" type="Sprite" parent="Background"]
-position = Vector2( 928, 576 )
+position = Vector2( 928, 592.008 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom4" type="Sprite" parent="Background"]
-position = Vector2( 288, 576 )
+position = Vector2( 288, 592 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom14" type="Sprite" parent="Background"]
-position = Vector2( 736, 576 )
+position = Vector2( 736, 592 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_bottom6" type="Sprite" parent="Background"]
-position = Vector2( 544, 576 )
+position = Vector2( 544, 592 )
 texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_left" type="Sprite" parent="Background"]
-position = Vector2( 32, 512 )
+position = Vector2( 32, 528 )
 texture = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_left5" type="Sprite" parent="Background"]
-position = Vector2( 32, 256 )
+position = Vector2( 32, 272.152 )
 texture = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_left3" type="Sprite" parent="Background"]
-position = Vector2( 32, 384 )
+position = Vector2( 32, 400.152 )
 texture = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_left6" type="Sprite" parent="Background"]
-position = Vector2( 32, 128 )
+position = Vector2( 32, 144 )
 texture = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_left7" type="Sprite" parent="Background"]
-position = Vector2( 32, 80 )
-texture = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_left2" type="Sprite" parent="Background"]
-position = Vector2( 32, 448 )
+position = Vector2( 32, 464.152 )
 texture = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_left8" type="Sprite" parent="Background"]
-position = Vector2( 32, 192 )
+position = Vector2( 32, 208.152 )
 texture = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_left4" type="Sprite" parent="Background"]
-position = Vector2( 32, 320 )
+position = Vector2( 32, 336.152 )
 texture = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_right" type="Sprite" parent="Background"]
-position = Vector2( 992, 512 )
+position = Vector2( 992, 528 )
 texture = ExtResource( 17 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_right5" type="Sprite" parent="Background"]
-position = Vector2( 992, 256 )
+position = Vector2( 992, 272.152 )
 texture = ExtResource( 17 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_right3" type="Sprite" parent="Background"]
-position = Vector2( 992, 384 )
+position = Vector2( 992, 400.152 )
 texture = ExtResource( 17 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_right8" type="Sprite" parent="Background"]
-position = Vector2( 992, 128 )
+position = Vector2( 992, 144.152 )
 texture = ExtResource( 17 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_right2" type="Sprite" parent="Background"]
-position = Vector2( 992, 448 )
+position = Vector2( 992, 464.152 )
 texture = ExtResource( 17 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_right7" type="Sprite" parent="Background"]
-position = Vector2( 992, 192 )
+position = Vector2( 992, 208.152 )
 texture = ExtResource( 17 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_right4" type="Sprite" parent="Background"]
-position = Vector2( 992, 320 )
+position = Vector2( 992, 336.152 )
 texture = ExtResource( 17 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_right6" type="Sprite" parent="Background"]
-position = Vector2( 992, 80 )
-texture = ExtResource( 17 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top" type="Sprite" parent="Background"]
-position = Vector2( 928, 32 )
+position = Vector2( 928, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top8" type="Sprite" parent="Background"]
-position = Vector2( 672, 32 )
+position = Vector2( 672, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top10" type="Sprite" parent="Background"]
-position = Vector2( 416, 32 )
+position = Vector2( 416, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top4" type="Sprite" parent="Background"]
-position = Vector2( 800, 32 )
+position = Vector2( 800, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top6" type="Sprite" parent="Background"]
-position = Vector2( 544, 32 )
+position = Vector2( 544, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top12" type="Sprite" parent="Background"]
-position = Vector2( 288, 32 )
+position = Vector2( 288, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top2" type="Sprite" parent="Background"]
-position = Vector2( 864, 32 )
+position = Vector2( 864, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top7" type="Sprite" parent="Background"]
-position = Vector2( 608, 32 )
+position = Vector2( 608, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top9" type="Sprite" parent="Background"]
-position = Vector2( 352, 32 )
+position = Vector2( 352, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top3" type="Sprite" parent="Background"]
-position = Vector2( 736, 32 )
+position = Vector2( 736, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top5" type="Sprite" parent="Background"]
-position = Vector2( 480, 32 )
+position = Vector2( 480, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top11" type="Sprite" parent="Background"]
-position = Vector2( 224, 32 )
+position = Vector2( 224, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top13" type="Sprite" parent="Background"]
-position = Vector2( 160, 32 )
+position = Vector2( 160, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_top14" type="Sprite" parent="Background"]
-position = Vector2( 96, 32 )
+position = Vector2( 96, 80 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border" type="Sprite" parent="Background"]
-position = Vector2( 96, 96 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border17" type="Sprite" parent="Background"]
-position = Vector2( 352, 96.0001 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border33" type="Sprite" parent="Background"]
-position = Vector2( 608, 96.0002 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border52" type="Sprite" parent="Background"]
-position = Vector2( 608, 96.0002 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border9" type="Sprite" parent="Background"]
-position = Vector2( 96, 224 )
+position = Vector2( 96, 208 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border67" type="Sprite" parent="Background"]
-position = Vector2( 96, 416 )
+position = Vector2( 96, 400 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border20" type="Sprite" parent="Background"]
-position = Vector2( 352, 224.006 )
+position = Vector2( 352, 208.006 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border79" type="Sprite" parent="Background"]
-position = Vector2( 352, 416.002 )
+position = Vector2( 352, 400.002 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border38" type="Sprite" parent="Background"]
-position = Vector2( 608, 224 )
+position = Vector2( 608, 208 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border54" type="Sprite" parent="Background"]
-position = Vector2( 608, 224.008 )
+position = Vector2( 608, 208.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border93" type="Sprite" parent="Background"]
-position = Vector2( 608, 416.004 )
+position = Vector2( 608, 400.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border5" type="Sprite" parent="Background"]
-position = Vector2( 224, 96.0001 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border31" type="Sprite" parent="Background"]
-position = Vector2( 480, 96.0001 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border40" type="Sprite" parent="Background"]
-position = Vector2( 736, 96.0002 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border60" type="Sprite" parent="Background"]
-position = Vector2( 736, 96.0002 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border16" type="Sprite" parent="Background"]
-position = Vector2( 224, 224 )
+position = Vector2( 224, 208 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border75" type="Sprite" parent="Background"]
-position = Vector2( 224, 415.996 )
+position = Vector2( 224, 399.996 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border29" type="Sprite" parent="Background"]
-position = Vector2( 480, 224.007 )
+position = Vector2( 480, 208.007 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border85" type="Sprite" parent="Background"]
-position = Vector2( 480, 416.003 )
+position = Vector2( 480, 400.003 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border44" type="Sprite" parent="Background"]
-position = Vector2( 736, 224 )
+position = Vector2( 736, 208 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border57" type="Sprite" parent="Background"]
-position = Vector2( 736, 224.008 )
+position = Vector2( 736, 208.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border96" type="Sprite" parent="Background"]
-position = Vector2( 736, 416.004 )
+position = Vector2( 736, 400.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border3" type="Sprite" parent="Background"]
-position = Vector2( 96, 160 )
+position = Vector2( 96, 144 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border70" type="Sprite" parent="Background"]
-position = Vector2( 96, 352 )
+position = Vector2( 96, 336 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border24" type="Sprite" parent="Background"]
-position = Vector2( 352, 160.006 )
+position = Vector2( 352, 144 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border76" type="Sprite" parent="Background"]
-position = Vector2( 352, 352.002 )
+position = Vector2( 352, 336.002 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border35" type="Sprite" parent="Background"]
-position = Vector2( 608, 160 )
+position = Vector2( 608, 144 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border53" type="Sprite" parent="Background"]
-position = Vector2( 608, 160.008 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border92" type="Sprite" parent="Background"]
-position = Vector2( 608, 352.004 )
+position = Vector2( 608, 336.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border14" type="Sprite" parent="Background"]
-position = Vector2( 96, 288.008 )
+position = Vector2( 96, 272.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border73" type="Sprite" parent="Background"]
-position = Vector2( 96, 480 )
+position = Vector2( 96, 464 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border101" type="Sprite" parent="Background"]
-position = Vector2( 96, 479.166 )
+position = Vector2( 96, 463.166 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border106" type="Sprite" parent="Background"]
 position = Vector2( 96, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border27" type="Sprite" parent="Background"]
-position = Vector2( 352, 288.008 )
+position = Vector2( 352, 272.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border83" type="Sprite" parent="Background"]
-position = Vector2( 352, 480.004 )
+position = Vector2( 352, 464.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border111" type="Sprite" parent="Background"]
-position = Vector2( 352, 528.841 )
+position = Vector2( 352, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border42" type="Sprite" parent="Background"]
-position = Vector2( 608, 288 )
+position = Vector2( 608, 272 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border58" type="Sprite" parent="Background"]
-position = Vector2( 608, 288.008 )
+position = Vector2( 608, 272.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border97" type="Sprite" parent="Background"]
-position = Vector2( 608, 480.004 )
+position = Vector2( 608, 464.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border104" type="Sprite" parent="Background"]
-position = Vector2( 608, 528.841 )
+position = Vector2( 608, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border7" type="Sprite" parent="Background"]
-position = Vector2( 224, 160.004 )
+position = Vector2( 224, 144 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border65" type="Sprite" parent="Background"]
-position = Vector2( 224, 352 )
+position = Vector2( 224, 336 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border18" type="Sprite" parent="Background"]
-position = Vector2( 480, 160.007 )
+position = Vector2( 480, 144.152 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border68" type="Sprite" parent="Background"]
-position = Vector2( 480, 352.003 )
+position = Vector2( 480, 336.003 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border34" type="Sprite" parent="Background"]
-position = Vector2( 736, 160 )
+position = Vector2( 736, 144 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border51" type="Sprite" parent="Background"]
-position = Vector2( 736, 160.008 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border91" type="Sprite" parent="Background"]
-position = Vector2( 736, 352.004 )
+position = Vector2( 736, 336.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border10" type="Sprite" parent="Background"]
-position = Vector2( 224, 288.008 )
+position = Vector2( 224, 272.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border71" type="Sprite" parent="Background"]
-position = Vector2( 224, 480.004 )
+position = Vector2( 224, 464.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border107" type="Sprite" parent="Background"]
-position = Vector2( 224, 528.841 )
+position = Vector2( 224, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border25" type="Sprite" parent="Background"]
-position = Vector2( 480, 288.008 )
+position = Vector2( 480, 272.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border77" type="Sprite" parent="Background"]
-position = Vector2( 480, 480.004 )
+position = Vector2( 480, 464.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border109" type="Sprite" parent="Background"]
-position = Vector2( 480, 528.841 )
+position = Vector2( 480, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border36" type="Sprite" parent="Background"]
-position = Vector2( 736, 288 )
+position = Vector2( 736, 272 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border55" type="Sprite" parent="Background"]
-position = Vector2( 736, 288.008 )
+position = Vector2( 736, 272.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border94" type="Sprite" parent="Background"]
-position = Vector2( 736, 480.004 )
+position = Vector2( 736, 464.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border102" type="Sprite" parent="Background"]
-position = Vector2( 736, 528.841 )
+position = Vector2( 736, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border2" type="Sprite" parent="Background"]
-position = Vector2( 160, 95.9999 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border23" type="Sprite" parent="Background"]
-position = Vector2( 416, 96 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border47" type="Sprite" parent="Background"]
-position = Vector2( 672, 96.0001 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border63" type="Sprite" parent="Background"]
-position = Vector2( 672, 96.0001 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border13" type="Sprite" parent="Background"]
-position = Vector2( 160, 224 )
+position = Vector2( 160, 208 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border72" type="Sprite" parent="Background"]
-position = Vector2( 160, 416 )
+position = Vector2( 160, 400 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border26" type="Sprite" parent="Background"]
-position = Vector2( 416, 224.006 )
+position = Vector2( 416, 208.006 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border81" type="Sprite" parent="Background"]
-position = Vector2( 416, 416.002 )
+position = Vector2( 416, 400.002 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border39" type="Sprite" parent="Background"]
-position = Vector2( 672, 224 )
+position = Vector2( 672, 208 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border49" type="Sprite" parent="Background"]
-position = Vector2( 672, 224.008 )
+position = Vector2( 672, 208.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border89" type="Sprite" parent="Background"]
-position = Vector2( 672, 416.004 )
+position = Vector2( 672, 400.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border6" type="Sprite" parent="Background"]
-position = Vector2( 288, 96 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border22" type="Sprite" parent="Background"]
-position = Vector2( 544, 96.0001 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border46" type="Sprite" parent="Background"]
-position = Vector2( 800, 96.0002 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border62" type="Sprite" parent="Background"]
-position = Vector2( 800, 96.0002 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border12" type="Sprite" parent="Background"]
-position = Vector2( 288, 224.004 )
+position = Vector2( 288, 208.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border69" type="Sprite" parent="Background"]
-position = Vector2( 288, 416 )
+position = Vector2( 288, 400 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border21" type="Sprite" parent="Background"]
-position = Vector2( 544, 224.008 )
+position = Vector2( 544, 208.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border87" type="Sprite" parent="Background"]
-position = Vector2( 544, 416.004 )
+position = Vector2( 544, 400.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border45" type="Sprite" parent="Background"]
-position = Vector2( 800, 224 )
+position = Vector2( 800, 208 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border122" type="Sprite" parent="Background"]
-position = Vector2( 864, 224.008 )
+position = Vector2( 864, 208.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border127" type="Sprite" parent="Background"]
-position = Vector2( 928, 224 )
+position = Vector2( 928, 208 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border61" type="Sprite" parent="Background"]
-position = Vector2( 800, 224.008 )
+position = Vector2( 800, 208.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border121" type="Sprite" parent="Background"]
-position = Vector2( 864, 224.015 )
+position = Vector2( 864, 208.015 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border126" type="Sprite" parent="Background"]
-position = Vector2( 928, 224.007 )
+position = Vector2( 928, 208.007 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border99" type="Sprite" parent="Background"]
-position = Vector2( 800, 416.004 )
+position = Vector2( 800, 400.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border117" type="Sprite" parent="Background"]
-position = Vector2( 864, 416.011 )
+position = Vector2( 864, 400.011 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border130" type="Sprite" parent="Background"]
-position = Vector2( 928, 416.004 )
+position = Vector2( 928, 400.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border4" type="Sprite" parent="Background"]
-position = Vector2( 160, 160 )
+position = Vector2( 160, 144 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border80" type="Sprite" parent="Background"]
-position = Vector2( 160, 352 )
+position = Vector2( 160, 336 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border30" type="Sprite" parent="Background"]
-position = Vector2( 416, 160.007 )
+position = Vector2( 416, 144 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border88" type="Sprite" parent="Background"]
-position = Vector2( 416, 352.003 )
+position = Vector2( 416, 336.003 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border48" type="Sprite" parent="Background"]
-position = Vector2( 672, 160 )
+position = Vector2( 672, 144 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border64" type="Sprite" parent="Background"]
-position = Vector2( 672, 160.008 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border100" type="Sprite" parent="Background"]
-position = Vector2( 672, 352.004 )
+position = Vector2( 672, 336.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border15" type="Sprite" parent="Background"]
-position = Vector2( 160, 288.007 )
+position = Vector2( 160, 272.007 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border74" type="Sprite" parent="Background"]
-position = Vector2( 160, 480.007 )
+position = Vector2( 160, 464.007 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border108" type="Sprite" parent="Background"]
-position = Vector2( 160, 528.841 )
+position = Vector2( 160, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border28" type="Sprite" parent="Background"]
-position = Vector2( 416, 288.008 )
+position = Vector2( 416, 272.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border84" type="Sprite" parent="Background"]
-position = Vector2( 416, 480.004 )
+position = Vector2( 416, 464.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border112" type="Sprite" parent="Background"]
-position = Vector2( 416, 528.841 )
+position = Vector2( 416, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border43" type="Sprite" parent="Background"]
-position = Vector2( 672, 288 )
+position = Vector2( 672, 272 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border56" type="Sprite" parent="Background"]
-position = Vector2( 672, 288.008 )
+position = Vector2( 672, 272.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border95" type="Sprite" parent="Background"]
-position = Vector2( 672, 480.004 )
+position = Vector2( 672, 464.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border103" type="Sprite" parent="Background"]
-position = Vector2( 672, 528.841 )
+position = Vector2( 672, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border8" type="Sprite" parent="Background"]
-position = Vector2( 288, 160.006 )
+position = Vector2( 288, 144 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border66" type="Sprite" parent="Background"]
-position = Vector2( 288, 352.002 )
+position = Vector2( 288, 336.002 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border19" type="Sprite" parent="Background"]
-position = Vector2( 544, 160.008 )
+position = Vector2( 544, 144.152 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border78" type="Sprite" parent="Background"]
-position = Vector2( 544, 352.004 )
+position = Vector2( 544, 336.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border37" type="Sprite" parent="Background"]
-position = Vector2( 800, 160 )
+position = Vector2( 800, 144 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border116" type="Sprite" parent="Background"]
-position = Vector2( 864, 160.008 )
+position = Vector2( 864, 144.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border131" type="Sprite" parent="Background"]
-position = Vector2( 928, 160 )
+position = Vector2( 928, 144 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border50" type="Sprite" parent="Background"]
-position = Vector2( 800, 160.008 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border119" type="Sprite" parent="Background"]
-position = Vector2( 864, 160.015 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border133" type="Sprite" parent="Background"]
-position = Vector2( 864, 96.0081 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border124" type="Sprite" parent="Background"]
-position = Vector2( 928, 160.007 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="grass_no_border132" type="Sprite" parent="Background"]
-position = Vector2( 928, 96.0002 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border90" type="Sprite" parent="Background"]
-position = Vector2( 800, 352.004 )
+position = Vector2( 800, 336.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border114" type="Sprite" parent="Background"]
-position = Vector2( 864, 352.011 )
+position = Vector2( 864, 336.011 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border128" type="Sprite" parent="Background"]
-position = Vector2( 928, 352 )
+position = Vector2( 928, 336 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border11" type="Sprite" parent="Background"]
-position = Vector2( 288, 288.008 )
+position = Vector2( 288, 272.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border86" type="Sprite" parent="Background"]
-position = Vector2( 288, 480.004 )
+position = Vector2( 288, 464.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border113" type="Sprite" parent="Background"]
-position = Vector2( 288, 528.841 )
+position = Vector2( 288, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border32" type="Sprite" parent="Background"]
-position = Vector2( 544, 288.008 )
+position = Vector2( 544, 272.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border82" type="Sprite" parent="Background"]
-position = Vector2( 544, 480 )
+position = Vector2( 544, 464 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border110" type="Sprite" parent="Background"]
-position = Vector2( 544, 528.841 )
+position = Vector2( 544, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border41" type="Sprite" parent="Background"]
-position = Vector2( 800, 288 )
+position = Vector2( 800, 272 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border118" type="Sprite" parent="Background"]
-position = Vector2( 864, 288.008 )
+position = Vector2( 864, 272.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border129" type="Sprite" parent="Background"]
-position = Vector2( 928, 288 )
+position = Vector2( 928, 272 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border59" type="Sprite" parent="Background"]
-position = Vector2( 800, 288.008 )
+position = Vector2( 800, 272.008 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border120" type="Sprite" parent="Background"]
-position = Vector2( 864, 288.015 )
+position = Vector2( 864, 272.015 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border125" type="Sprite" parent="Background"]
-position = Vector2( 928, 288.007 )
+position = Vector2( 928, 272.007 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border98" type="Sprite" parent="Background"]
-position = Vector2( 800, 480.004 )
+position = Vector2( 800, 464.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border115" type="Sprite" parent="Background"]
-position = Vector2( 864, 480.011 )
+position = Vector2( 864, 464.011 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border134" type="Sprite" parent="Background"]
-position = Vector2( 864, 528.008 )
+position = Vector2( 864, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border123" type="Sprite" parent="Background"]
-position = Vector2( 928, 480.004 )
+position = Vector2( 928, 464.004 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border135" type="Sprite" parent="Background"]
 position = Vector2( 928, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="grass_no_border105" type="Sprite" parent="Background"]
-position = Vector2( 800, 528.841 )
+position = Vector2( 800, 528 )
 texture = ExtResource( 19 )
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="Timer" parent="." instance=ExtResource( 20 )]
+[node name="sky" type="Sprite" parent="Background"]
+position = Vector2( 32, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky10" type="Sprite" parent="Background"]
+position = Vector2( 415.716, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky4" type="Sprite" parent="Background"]
+position = Vector2( 224, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky9" type="Sprite" parent="Background"]
+position = Vector2( 544, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky13" type="Sprite" parent="Background"]
+position = Vector2( 864.284, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky2" type="Sprite" parent="Background"]
+position = Vector2( 96, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky11" type="Sprite" parent="Background"]
+position = Vector2( 479.716, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky5" type="Sprite" parent="Background"]
+position = Vector2( 288, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky8" type="Sprite" parent="Background"]
+position = Vector2( 671.716, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky12" type="Sprite" parent="Background"]
+position = Vector2( 608, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky16" type="Sprite" parent="Background"]
+position = Vector2( 928, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky3" type="Sprite" parent="Background"]
+position = Vector2( 160, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky15" type="Sprite" parent="Background"]
+position = Vector2( 800, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky6" type="Sprite" parent="Background"]
+position = Vector2( 352, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky7" type="Sprite" parent="Background"]
+position = Vector2( 735.716, 16 )
+texture = ExtResource( 20 )
+
+[node name="sky14" type="Sprite" parent="Background"]
+position = Vector2( 992, 16 )
+texture = ExtResource( 20 )
+
+[node name="Timer" parent="." instance=ExtResource( 21 )]
 visible = false
 position = Vector2( 600, 110 )
 
-[node name="HighScore" parent="." instance=ExtResource( 21 )]
+[node name="HighScore" parent="." instance=ExtResource( 22 )]
 position = Vector2( 150, 100 )
 
 [node name="ScreenCenter" type="Node2D" parent="."]
 position = Vector2( 512, 300 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="ScreenShake" parent="." instance=ExtResource( 22 )]
-position = Vector2( 510, 300 )
+[node name="ScreenShake" parent="." instance=ExtResource( 23 )]
+position = Vector2( 510, 304 )
 
-[node name="PowerMeter" parent="." instance=ExtResource( 23 )]
+[node name="PowerMeter" parent="." instance=ExtResource( 24 )]
 position = Vector2( 292.716, 415.996 )
 
 [node name="CelebrationTimer" type="Timer" parent="."]
