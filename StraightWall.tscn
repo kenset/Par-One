@@ -1,4 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="PhysicsMaterial" id=2]
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -13,6 +17,7 @@ color = Color( 0.254902, 0.192157, 0.188235, 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
+physics_material_override = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 16, 16 )
