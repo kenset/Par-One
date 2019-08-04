@@ -16,9 +16,7 @@
 
 [node name="CourseComponents" type="Node2D" parent="."]
 editor/display_folded = true
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( 0.6, 32 )
 
 [node name="TopLeftCourse" parent="CourseComponents" instance=ExtResource( 1 )]
 position = Vector2( -96, -224 )

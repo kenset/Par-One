@@ -1,24 +1,31 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://PlayScene.gd" type="Script" id=1]
 [ext_resource path="res://courses/Course_01.tscn" type="PackedScene" id=2]
 [ext_resource path="res://courses/Course_02.tscn" type="PackedScene" id=3]
-[ext_resource path="res://PowerMeter.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Timer.tscn" type="PackedScene" id=5]
-[ext_resource path="res://HighScore.tscn" type="PackedScene" id=6]
+[ext_resource path="res://courses/Course_03.tscn" type="PackedScene" id=4]
+[ext_resource path="res://courses/Course_04.tscn" type="PackedScene" id=5]
+[ext_resource path="res://courses/Course_05.tscn" type="PackedScene" id=6]
+[ext_resource path="res://courses/Course_06.tscn" type="PackedScene" id=7]
+[ext_resource path="res://courses/Course_07.tscn" type="PackedScene" id=8]
+[ext_resource path="res://courses/Course_08.tscn" type="PackedScene" id=9]
+[ext_resource path="res://courses/Course_09.tscn" type="PackedScene" id=10]
+[ext_resource path="res://PowerMeter.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Timer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://HighScore.tscn" type="PackedScene" id=13]
 
 [node name="PlayScene" type="Node2D"]
 script = ExtResource( 1 )
-courses = [ ExtResource( 2 ), ExtResource( 3 ) ]
+courses = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ]
 
-[node name="PowerMeter" parent="." instance=ExtResource( 4 )]
+[node name="PowerMeter" parent="." instance=ExtResource( 11 )]
 position = Vector2( 420, 550 )
 
-[node name="Timer" parent="." instance=ExtResource( 5 )]
+[node name="Timer" parent="." instance=ExtResource( 12 )]
 visible = false
 position = Vector2( 600, 110 )
 
-[node name="HighScore" parent="." instance=ExtResource( 6 )]
+[node name="HighScore" parent="." instance=ExtResource( 13 )]
 position = Vector2( 150, 100 )
 
 [node name="ScreenCenter" type="Node2D" parent="."]
