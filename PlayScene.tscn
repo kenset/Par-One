@@ -33,6 +33,7 @@ script = ExtResource( 1 )
 courses = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ]
 
 [node name="Background" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="grass_right_bottom" type="Sprite" parent="Background"]
 position = Vector2( 992, 592.008 )
