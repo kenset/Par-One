@@ -11,6 +11,7 @@ var currentCourseNumber = 0
 var currentCourse: Node2D
 var confetti_scene = preload("res://Confetti.tscn")
 var go_to_hard_course = false
+var in_hard_course = false
 
 func _ready():
 	self.connect("reset_power_meter", $PowerMeter, "_on_reset_power_meter")
@@ -20,11 +21,13 @@ func _ready():
 func _input(event):
 	if event is InputEventKey and event.pressed and event.scancode != KEY_SPACE:
 		if (event.scancode - 49 < courses.size()):
+			go_to_hard_course = false
 			loadCourseWithCourseNumber(event.scancode - 49, courses)
 
 func _process(delta):
 	if (Input.is_action_pressed("hard_modifier")):
 		if (Input.is_key_pressed(KEY_1)):
+			go_to_hard_course = true
 			loadCourseWithCourseNumber(0, hardCourses)
 
 func loadNextCourse():
@@ -41,6 +44,10 @@ func loadCourseWithCourseNumber(courseNumber, courses_array):
 	
 	var courseToLoad = courses_array[courseNumber].instance()
 	loadCourse(courseToLoad)
+	if (go_to_hard_course == true):
+		in_hard_course = true
+	else:
+		in_hard_course = false
 
 func loadCourse(course):
 	currentCourse = course
@@ -94,6 +101,8 @@ func _on_hole_in_one(is_special):
 	if (is_special):
 		confettiPosition = currentCourse.get_node("SpecialHole").get_global_position()
 		go_to_hard_course = true
+	else:
+		go_to_hard_course = false
 	confetti.set_global_position(confettiPosition)
 	add_child(confetti)
 

@@ -89,7 +89,3 @@ position = Vector2( 32, 112 )
 
 [node name="Sign" parent="." instance=ExtResource( 14 )]
 position = Vector2( 176, 88 )
-
-[node name="SpecialHole" parent="." instance=ExtResource( 13 )]
-position = Vector2( -64, 112 )
-IS_SPECIAL = true

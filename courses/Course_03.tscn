@@ -83,3 +83,7 @@ position = Vector2( 160, -160 )
 [node name="Sign" parent="." instance=ExtResource( 13 )]
 position = Vector2( 61.0779, 87.1967 )
 LABEL = 3
+
+[node name="SpecialHole" parent="." instance=ExtResource( 12 )]
+position = Vector2( 25.3227, -42.3208 )
+IS_SPECIAL = true

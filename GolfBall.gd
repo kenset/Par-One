@@ -44,8 +44,12 @@ func _on_power_level_selected(power_level):
 
 func _on_body_entered(body):
 	$WallHit.play()
+	
+	if (find_parent("PlayScene").in_hard_course):
+		emit_signal("score_points", WALL_POINTS * 3)
+	else:
+			emit_signal("score_points", WALL_POINTS)
 	emit_signal("screen_shake", 1.0, 0.1)
-	emit_signal("score_points", WALL_POINTS)
 
 func _on_hole_in_one(is_special):
 	queue_free()

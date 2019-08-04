@@ -99,7 +99,7 @@ position = Vector2( 160, 16 )
 texture = ExtResource( 10 )
 
 [node name="GolfBall" parent="." instance=ExtResource( 11 )]
-position = Vector2( 155, 8 )
+position = Vector2( 171.113, 10.5889 )
 
 [node name="Hole" parent="." instance=ExtResource( 12 )]
 position = Vector2( -160, -160 )

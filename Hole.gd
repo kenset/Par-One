@@ -16,7 +16,10 @@ func _ready():
 
 func _on_body_entered(body):
 	hole_in_one()
-	emit_signal("score_points", 1000)
+	var points = 1000
+	if (find_parent("PlayScene").in_hard_course):
+		points = 3000
+	emit_signal("score_points", points)
 
 func hole_in_one():
 	if (IS_SPECIAL):
