@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://SandTrap.gd" type="Script" id=1]
 [ext_resource path="res://assets/course/sand_trap.png" type="Texture" id=2]
+[ext_resource path="res://assets/sound_effects/Sand Trap.wav" type="AudioStream" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 41.12, -16.92, 18.42, 23.82, -20.84, 32.08, -21.86, -21.58, 20.16, -26.94 )
@@ -20,3 +21,6 @@ collision_layer = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -6.95947, -1.48211 )
 shape = SubResource( 1 )
+
+[node name="SoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

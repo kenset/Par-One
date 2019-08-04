@@ -11,6 +11,7 @@ func _ready():
 #	pass
 
 func _on_body_entered(body):
+	$SoundEffect.play(0.0)
 	get_tree().call_group("golfBall", "_on_entered_sand_trap")
 
 func _on_body_exited(body):
