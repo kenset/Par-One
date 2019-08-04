@@ -9,7 +9,6 @@ signal golf_ball_hit
 signal score_points
 
 func _ready():
-	self.set_process_input(true)
 	self.connect("body_entered", self, "_on_body_entered")
 
 func _process(delta):
@@ -26,7 +25,7 @@ func _hit_golf_ball():
 
 func _on_power_level_selected(power_level):
 	$Arrow.hide()
-	self.apply_central_impulse((get_global_mouse_position() - self.position).normalized() * (power_level * POWER_MULTIPLIER))
+	self.apply_central_impulse((get_global_mouse_position() - self.global_position).normalized() * (power_level * POWER_MULTIPLIER))
 
 func _on_body_entered(body):
 	emit_signal("score_points", WALL_POINTS)

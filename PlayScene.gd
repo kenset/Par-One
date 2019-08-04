@@ -5,18 +5,9 @@ signal score_points
 export(Array, PackedScene) var courses
 
 var currentCourseNumber = 0
-var currentCourse
+var currentCourse: Node2D
 
 func _ready():
-	$GolfBall.connect("golf_ball_hit", $PowerMeter, "_on_golf_ball_hit")
-	$PowerMeter.connect("power_level_selected", $GolfBall, "_on_power_level_selected")
-	$Timer/Timer.connect("timeout", self, "_on_timeout")
-	$Hole.connect("hole_in_one", $GolfBall, "_on_hole_in_one")
-	
-	self.connect("score_points", $HighScore, "_on_score_points")
-	$GolfBall.connect("score_points", $HighScore, "_on_score_points")
-	$Hole.connect("score_points", $HighScore, "_on_score_points")
-	
 	loadCourse(currentCourseNumber)
 
 func loadNextCourse():
@@ -28,6 +19,19 @@ func loadCourse(courseNumber):
 	currentCourse = courses[courseNumber].instance()
 	currentCourse.set_global_transform($ScreenCenter.get_global_transform())
 	add_child(currentCourse)
+	
+	var golfBall: Node2D = currentCourse.get_node("GolfBall")
+	var hole: Node2D = currentCourse.get_node("Hole")
+	
+	golfBall.connect("golf_ball_hit", $PowerMeter, "_on_golf_ball_hit")
+	$PowerMeter.connect("power_level_selected", golfBall, "_on_power_level_selected")
+	
+	$Timer/Timer.connect("timeout", self, "_on_timeout")
+	hole.connect("hole_in_one", golfBall, "_on_hole_in_one")
+	
+	self.connect("score_points", $HighScore, "_on_score_points")
+	golfBall.connect("score_points", $HighScore, "_on_score_points")
+	hole.connect("score_points", $HighScore, "_on_score_points")
 
 #func _process(delta):
 #	pass
