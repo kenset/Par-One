@@ -20,4 +20,3 @@ text = "5"
 scroll_active = false
 
 [node name="Timer" type="Timer" parent="."]
-one_shot = true

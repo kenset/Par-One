@@ -11,9 +11,10 @@ func _ready():
 	loadCourse(currentCourseNumber)
 
 func loadNextCourse():
-	currentCourse.queue_free()
 	currentCourseNumber = currentCourseNumber + 1
-	loadCourse(currentCourseNumber)
+	if (currentCourseNumber < courses.size()):
+		currentCourse.queue_free()
+		loadCourse(currentCourseNumber)
 
 func loadCourse(courseNumber):
 	currentCourse = courses[courseNumber].instance()

@@ -12,7 +12,7 @@ script = ExtResource( 1 )
 courses = [ ExtResource( 2 ), ExtResource( 3 ) ]
 
 [node name="PowerMeter" parent="." instance=ExtResource( 4 )]
-position = Vector2( 250, 400 )
+position = Vector2( 420, 550 )
 
 [node name="Timer" parent="." instance=ExtResource( 5 )]
 position = Vector2( 600, 110 )
