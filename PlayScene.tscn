@@ -21,7 +21,7 @@ script = ExtResource( 1 )
 courses = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ]
 
 [node name="PowerMeter" parent="." instance=ExtResource( 11 )]
-position = Vector2( 420, 550 )
+position = Vector2( 292.716, 416.834 )
 
 [node name="Timer" parent="." instance=ExtResource( 12 )]
 visible = false
