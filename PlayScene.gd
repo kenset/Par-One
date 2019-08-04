@@ -10,6 +10,7 @@ export var SHAKE_AMOUNT = 1.0
 var currentCourseNumber = 0
 var currentCourse: Node2D
 var confetti_scene = preload("res://Confetti.tscn")
+var go_to_hard_course = false
 
 func _ready():
 	self.connect("reset_power_meter", $PowerMeter, "_on_reset_power_meter")
@@ -48,6 +49,7 @@ func loadCourse(course):
 	
 	var golfBall: Node2D = currentCourse.get_node("GolfBall")
 	var hole: Node2D = currentCourse.get_node("Hole")
+	var specialHole: Node2D = currentCourse.get_node("SpecialHole")
 	
 	golfBall.connect("golf_ball_hit", $PowerMeter, "_on_golf_ball_hit")
 	golfBall.connect("golf_ball_stopped", self, "_on_golf_ball_stopped")
@@ -58,17 +60,26 @@ func loadCourse(course):
 	$CelebrationTimer.connect("timeout", self, "_on_celebration_timeout")
 	hole.connect("hole_in_one", golfBall, "_on_hole_in_one")
 	hole.connect("hole_in_one", self, "_on_hole_in_one")
+	if (specialHole != null):
+		specialHole.connect("hole_in_one", golfBall, "_on_hole_in_one")
+		specialHole.connect("hole_in_one", self, "_on_hole_in_one")
 	
 	self.connect("score_points", $HighScore, "_on_score_points")
 	golfBall.connect("score_points", $HighScore, "_on_score_points")
 	hole.connect("score_points", $HighScore, "_on_score_points")
+	if (specialHole != null):
+		specialHole.connect("score_points", $HighScore, "_on_score_points")
 	
 	currentCourse.find_node("GolfBall").add_to_group("golfBall")
 
 func _on_celebration_timeout():
-	loadNextCourse()
+	if (go_to_hard_course == true):
+		loadCourseWithCourseNumber(0, hardCourses)
+	else:
+		loadNextCourse()
 
 func _on_golf_ball_stopped():
+	go_to_hard_course = false
 	calculate_score()
 	loadNextCourse()
 
@@ -76,10 +87,14 @@ func _on_timeout():
 	calculate_score()
 	loadNextCourse()
 
-func _on_hole_in_one():
+func _on_hole_in_one(is_special):
 	$CelebrationTimer.start()
 	var confetti = confetti_scene.instance()
-	confetti.set_global_position(currentCourse.get_node("Hole").get_global_position())
+	var confettiPosition = currentCourse.get_node("Hole").get_global_position()
+	if (is_special):
+		confettiPosition = currentCourse.get_node("SpecialHole").get_global_position()
+		go_to_hard_course = true
+	confetti.set_global_position(confettiPosition)
 	add_child(confetti)
 
 func calculate_score():

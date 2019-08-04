@@ -1,10 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Hole.gd" type="Script" id=1]
 [ext_resource path="res://assets/course/hole.png" type="Texture" id=2]
 [ext_resource path="res://assets/sound_effects/hole_in_one.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/course/special_hole_01.png" type="Texture" id=4]
+[ext_resource path="res://assets/course/special_hole_02.png" type="Texture" id=5]
+[ext_resource path="res://assets/sound_effects/hole_in_one_special.wav" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
 
 [node name="Hole" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,11 +27,21 @@ collision_layer = 4
 position = Vector2( 10, 10 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="NormalHole" type="Sprite" parent="."]
 position = Vector2( 10.8186, 8.729 )
 scale = Vector2( 0.68, 0.68 )
 texture = ExtResource( 2 )
 offset = Vector2( -1.49246, -0.836833 )
 
-[node name="Audio" type="AudioStreamPlayer" parent="."]
+[node name="NormalHoleAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="SpecialHole" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 9.96489, 12.049 )
+scale = Vector2( 0.68, 0.68 )
+frames = SubResource( 2 )
+playing = true
+
+[node name="SpecialHoleAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )

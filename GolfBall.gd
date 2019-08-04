@@ -47,7 +47,7 @@ func _on_body_entered(body):
 	emit_signal("screen_shake", 1.0, 0.1)
 	emit_signal("score_points", WALL_POINTS)
 
-func _on_hole_in_one():
+func _on_hole_in_one(is_special):
 	queue_free()
 
 func _on_entered_sand_trap():
