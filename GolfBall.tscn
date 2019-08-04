@@ -35,7 +35,9 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+POWER_MULTIPLIER = 10
 LINEAR_DAMP = 0.5
+SAND_TRAP_DAMP = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 5, 5 )
