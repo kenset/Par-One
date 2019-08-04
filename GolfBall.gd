@@ -4,6 +4,7 @@ export var POWER_MULTIPLIER = 5
 export var WALL_POINTS = 10
 
 var golf_ball_has_been_hit = false
+var in_sand_trap = false
 
 signal golf_ball_hit
 signal golf_ball_stopped
@@ -17,6 +18,10 @@ func _process(delta):
 		$Arrow.look_at(get_global_mouse_position())
 
 func _integrate_forces(state):
+	if (in_sand_trap == true):
+		self.set_linear_damp(5.0)
+	else :
+		self.set_linear_damp(0.25)
 	if (self.linear_velocity.length() < 5 && self.linear_velocity.length() > 0):
 		linear_velocity = Vector2(0, 0)
 		$AnimatedSprite.playing = false
@@ -41,3 +46,9 @@ func _on_body_entered(body):
 
 func _on_hole_in_one():
 	queue_free()
+
+func _on_entered_sand_trap():
+	in_sand_trap = true
+
+func _on_exited_sand_trap():
+	in_sand_trap = false

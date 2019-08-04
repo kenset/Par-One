@@ -24,6 +24,7 @@ config/icon="res://icon.png"
 2d_physics/layer_1="golfBall"
 2d_physics/layer_2="walls"
 2d_physics/layer_3="hole"
+2d_physics/layer_4="traps"
 
 [rendering]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://courses/course_components/TopCourse.tscn" type="PackedScene" id=1]
 [ext_resource path="res://courses/course_components/TopLeftCourse.tscn" type="PackedScene" id=2]
@@ -9,8 +9,9 @@
 [ext_resource path="res://courses/course_components/BottomRightCourse.tscn" type="PackedScene" id=7]
 [ext_resource path="res://courses/course_components/BottomCourse.tscn" type="PackedScene" id=8]
 [ext_resource path="res://courses/course_components/CourseGrass.tscn" type="PackedScene" id=9]
-[ext_resource path="res://GolfBall.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Hole.tscn" type="PackedScene" id=11]
+[ext_resource path="res://SandTrap.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GolfBall.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Hole.tscn" type="PackedScene" id=12]
 
 [node name="Course_01" type="Node2D"]
 
@@ -71,8 +72,11 @@ position = Vector2( 0, 64 )
 [node name="CourseGrass6" parent="CourseComponents" instance=ExtResource( 9 )]
 position = Vector2( 0, 128 )
 
-[node name="GolfBall" parent="." instance=ExtResource( 10 )]
+[node name="SandTrap" parent="." instance=ExtResource( 10 )]
+position = Vector2( -29.0294, 12.6741 )
+
+[node name="GolfBall" parent="." instance=ExtResource( 11 )]
 position = Vector2( -48, -112 )
 
-[node name="Hole" parent="." instance=ExtResource( 11 )]
+[node name="Hole" parent="." instance=ExtResource( 12 )]
 position = Vector2( 32, 112 )

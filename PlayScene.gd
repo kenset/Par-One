@@ -11,6 +11,7 @@ var currentCourse: Node2D
 func _ready():
 	self.connect("reset_power_meter", $PowerMeter, "_on_reset_power_meter")
 	loadCourse(currentCourseNumber)
+	currentCourse.find_node("GolfBall").add_to_group("golfBall")
 
 func _input(event):
 	if event is InputEventKey and event.pressed and event.scancode != KEY_SPACE:

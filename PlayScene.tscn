@@ -14,7 +14,9 @@
 [ext_resource path="res://Timer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://HighScore.tscn" type="PackedScene" id=13]
 
-[node name="PlayScene" type="Node2D"]
+[node name="PlayScene" type="Node2D" groups=[
+"golfBall",
+]]
 script = ExtResource( 1 )
 courses = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ]
 

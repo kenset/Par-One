@@ -23,7 +23,7 @@ animations = [ {
 
 [node name="GolfBall" type="RigidBody2D"]
 position = Vector2( 0, 0.0896072 )
-collision_mask = 6
+collision_mask = 14
 physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
 contacts_reported = 1
