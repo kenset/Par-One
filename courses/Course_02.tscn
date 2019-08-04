@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://courses/course_components/TopLeftCourse.tscn" type="PackedScene" id=1]
+[ext_resource path="res://courses/course_components/TopRightCourse.tscn" type="PackedScene" id=2]
+[ext_resource path="res://courses/course_components/SideLeftCourse.tscn" type="PackedScene" id=3]
+[ext_resource path="res://courses/course_components/SideRightCourse.tscn" type="PackedScene" id=4]
+[ext_resource path="res://courses/course_components/BottomLeftCourse.tscn" type="PackedScene" id=5]
+[ext_resource path="res://courses/course_components/BottomCourse.tscn" type="PackedScene" id=6]
+[ext_resource path="res://courses/course_components/CourseGrass.tscn" type="PackedScene" id=7]
+[ext_resource path="res://courses/course_components/TopCourse.tscn" type="PackedScene" id=8]
+[ext_resource path="res://courses/course_components/BottomRightCourse.tscn" type="PackedScene" id=9]
+
+[node name="Course_01" type="Node2D"]
+
+[node name="TopLeftCourse" parent="." instance=ExtResource( 1 )]
+position = Vector2( -96, -160 )
+
+[node name="TopRightCourse" parent="." instance=ExtResource( 2 )]
+position = Vector2( -32, -160 )
+
+[node name="SideLeftCourse" parent="." instance=ExtResource( 3 )]
+position = Vector2( -96, -96 )
+
+[node name="SideLeftCourse2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -96, -32 )
+
+[node name="SideLeftCourse3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -96, 32 )
+
+[node name="SideRightCourse" parent="." instance=ExtResource( 4 )]
+position = Vector2( -32, -96 )
+
+[node name="SideRightCourse2" parent="." instance=ExtResource( 4 )]
+position = Vector2( -32, -32 )
+
+[node name="BottomLeftCourse" parent="." instance=ExtResource( 5 )]
+position = Vector2( -96, 96 )
+
+[node name="BottomCourse" parent="." instance=ExtResource( 6 )]
+position = Vector2( -32, 96 )
+
+[node name="CourseGrass5" parent="." instance=ExtResource( 7 )]
+position = Vector2( -32, 32 )
+
+[node name="TopCourse2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 96, 32 )
+
+[node name="BottomCourse2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 96, 96 )
+
+[node name="BottomCourse3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 32, 96 )
+
+[node name="TopRightCourse2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 160, 32 )
+
+[node name="BottomRightCourse" parent="." instance=ExtResource( 9 )]
+position = Vector2( 160, 96 )
+
+[node name="TopCourse" parent="." instance=ExtResource( 8 )]
+position = Vector2( 32, 32 )

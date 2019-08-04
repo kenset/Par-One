@@ -1,30 +1,32 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://PlayScene.gd" type="Script" id=1]
 [ext_resource path="res://courses/Course_01.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Hole.tscn" type="PackedScene" id=3]
-[ext_resource path="res://GolfBall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://PowerMeter.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Timer.tscn" type="PackedScene" id=6]
-[ext_resource path="res://HighScore.tscn" type="PackedScene" id=7]
+[ext_resource path="res://courses/Course_02.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Hole.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GolfBall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://PowerMeter.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Timer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://HighScore.tscn" type="PackedScene" id=8]
 
 [node name="PlayScene" type="Node2D"]
 script = ExtResource( 1 )
+courses = [ ExtResource( 2 ), ExtResource( 3 ) ]
 
-[node name="Course_01" parent="." instance=ExtResource( 2 )]
-position = Vector2( 250, 60 )
+[node name="Hole" parent="." instance=ExtResource( 4 )]
+position = Vector2( 526, 320 )
 
-[node name="Hole" parent="." instance=ExtResource( 3 )]
-position = Vector2( 330, 320 )
-
-[node name="GolfBall" parent="." instance=ExtResource( 4 )]
+[node name="GolfBall" parent="." instance=ExtResource( 5 )]
 position = Vector2( 340, 100 )
 
-[node name="PowerMeter" parent="." instance=ExtResource( 5 )]
+[node name="PowerMeter" parent="." instance=ExtResource( 6 )]
 position = Vector2( 250, 400 )
 
-[node name="Timer" parent="." instance=ExtResource( 6 )]
+[node name="Timer" parent="." instance=ExtResource( 7 )]
 position = Vector2( 600, 110 )
 
-[node name="HighScore" parent="." instance=ExtResource( 7 )]
+[node name="HighScore" parent="." instance=ExtResource( 8 )]
 position = Vector2( 150, 100 )
+
+[node name="ScreenCenter" type="Node2D" parent="."]
+position = Vector2( 512, 300 )
