@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://courses/course_components/TopCourse.tscn" type="PackedScene" id=1]
 [ext_resource path="res://courses/course_components/TopLeftCourse.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://courses/course_components/CourseGrass.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GolfBall.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Hole.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sign.tscn" type="PackedScene" id=11]
 
 [node name="Course_07" type="Node2D"]
 
@@ -70,3 +71,7 @@ position = Vector2( 112.28, 144 )
 
 [node name="Hole" parent="." instance=ExtResource( 10 )]
 position = Vector2( 27.8, -112 )
+
+[node name="Sign" parent="." instance=ExtResource( 11 )]
+position = Vector2( 248.794, 89.8708 )
+LABEL = 7
