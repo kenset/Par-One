@@ -20,3 +20,8 @@ func _on_golf_ball_hit():
 	pause_progress = true
 	var power_level = $ProgressBar.value
 	emit_signal("power_level_selected", power_level)
+
+func _on_reset_power_meter():
+	$ProgressBar.value = 0
+	pause_progress = false
+	direction = 1

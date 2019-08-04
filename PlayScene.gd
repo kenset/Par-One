@@ -1,6 +1,7 @@
 extends Node2D
 
 signal score_points
+signal reset_power_meter
 
 export(Array, PackedScene) var courses
 
@@ -8,6 +9,7 @@ var currentCourseNumber = 0
 var currentCourse: Node2D
 
 func _ready():
+	self.connect("reset_power_meter", $PowerMeter, "_on_reset_power_meter")
 	loadCourse(currentCourseNumber)
 
 func loadNextCourse():
@@ -39,8 +41,8 @@ func loadCourse(courseNumber):
 
 func _on_timeout():
 	calculate_score()
+	emit_signal("reset_power_meter")
 	loadNextCourse()
-#	get_tree().reload_current_scene()
 
 func calculate_score():
 	if ($GolfBall == null):
