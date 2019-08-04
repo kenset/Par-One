@@ -17,10 +17,10 @@ position = Vector2( 10, 10 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 9.8512, 9.9148 )
+position = Vector2( 10.8186, 8.729 )
 scale = Vector2( 0.68, 0.68 )
 texture = ExtResource( 2 )
-offset = Vector2( -0.0697508, -2.58065 )
+offset = Vector2( -1.49246, -0.836833 )
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

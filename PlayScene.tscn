@@ -780,3 +780,7 @@ position = Vector2( 510, 300 )
 
 [node name="PowerMeter" parent="." instance=ExtResource( 23 )]
 position = Vector2( 292.716, 415.996 )
+
+[node name="CelebrationTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

@@ -8,6 +8,7 @@ export var SHAKE_AMOUNT = 1.0
 
 var currentCourseNumber = 0
 var currentCourse: Node2D
+var confetti_scene = preload("res://Confetti.tscn")
 
 func _ready():
 	self.connect("reset_power_meter", $PowerMeter, "_on_reset_power_meter")
@@ -45,6 +46,7 @@ func loadCourse(courseNumber):
 	$PowerMeter.connect("power_level_selected", golfBall, "_on_power_level_selected")
 	
 	$Timer/Timer.connect("timeout", self, "_on_timeout")
+	$CelebrationTimer.connect("timeout", self, "_on_celebration_timeout")
 	hole.connect("hole_in_one", golfBall, "_on_hole_in_one")
 	hole.connect("hole_in_one", self, "_on_hole_in_one")
 	
@@ -53,6 +55,9 @@ func loadCourse(courseNumber):
 	hole.connect("score_points", $HighScore, "_on_score_points")
 	
 	currentCourse.find_node("GolfBall").add_to_group("golfBall")
+
+func _on_celebration_timeout():
+	loadNextCourse()
 
 func _on_golf_ball_stopped():
 	calculate_score()
@@ -63,7 +68,10 @@ func _on_timeout():
 	loadNextCourse()
 
 func _on_hole_in_one():
-	loadNextCourse()
+	$CelebrationTimer.start()
+	var confetti = confetti_scene.instance()
+	confetti.set_global_position(currentCourse.get_node("Hole").get_global_position())
+	add_child(confetti)
 
 func calculate_score():
 	if ($GolfBall == null):
