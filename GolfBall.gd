@@ -2,6 +2,8 @@ extends RigidBody2D
 
 export var POWER_MULTIPLIER = 5
 export var WALL_POINTS = 10
+export var LINEAR_DAMP = 0.25
+export var SAND_TRAP_DAMP = 5.0
 
 var golf_ball_has_been_hit = false
 var in_sand_trap = false
@@ -19,9 +21,9 @@ func _process(delta):
 
 func _integrate_forces(state):
 	if (in_sand_trap == true):
-		self.set_linear_damp(5.0)
+		self.set_linear_damp(SAND_TRAP_DAMP)
 	else :
-		self.set_linear_damp(0.25)
+		self.set_linear_damp(LINEAR_DAMP)
 	if (self.linear_velocity.length() < 5 && self.linear_velocity.length() > 0):
 		linear_velocity = Vector2(0, 0)
 		$AnimatedSprite.playing = false
