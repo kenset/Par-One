@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GolfBall.gd" type="Script" id=1]
-[ext_resource path="res://assets/arrow.png" type="Texture" id=2]
+[ext_resource path="res://assets/golf_ball/golf_ball_anim_01.png" type="Texture" id=2]
+[ext_resource path="res://assets/golf_ball/golf_ball_anim_02.png" type="Texture" id=3]
+[ext_resource path="res://assets/golf_ball/golf_ball_anim_03.png" type="Texture" id=4]
+[ext_resource path="res://assets/golf_ball/golf_ball_anim_04.png" type="Texture" id=5]
+[ext_resource path="res://assets/arrow.png" type="Texture" id=6]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 1.0
@@ -9,7 +13,16 @@ bounce = 1.0
 [sub_resource type="CircleShape2D" id=2]
 radius = 7.07107
 
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="GolfBall" type="RigidBody2D"]
+position = Vector2( 0, 0.0896072 )
 collision_mask = 6
 physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
@@ -26,13 +39,20 @@ __meta__ = {
 position = Vector2( 5, 5 )
 shape = SubResource( 2 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 4.65116, 4.11071 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 3 )
+frame = 3
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_right = 10.0
 margin_bottom = 10.0
 
 [node name="Arrow" type="Sprite" parent="."]
-position = Vector2( 5, 5 )
+position = Vector2( 5.03286, 5.00052 )
 rotation = 1.5708
-scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 2 )
-offset = Vector2( 490, 7.62939e-06 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+offset = Vector2( 30.6231, 3.45085 )

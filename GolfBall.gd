@@ -19,6 +19,7 @@ func _process(delta):
 func _integrate_forces(state):
 	if (self.linear_velocity.length() < 5 && self.linear_velocity.length() > 0):
 		linear_velocity = Vector2(0, 0)
+		$AnimatedSprite.playing = false
 		emit_signal("golf_ball_stopped")
 
 func _input(event):
@@ -27,6 +28,7 @@ func _input(event):
 			hit_golf_ball()
 
 func hit_golf_ball():
+	$AnimatedSprite.playing = true
 	golf_ball_has_been_hit = true
 	emit_signal("golf_ball_hit")
 
